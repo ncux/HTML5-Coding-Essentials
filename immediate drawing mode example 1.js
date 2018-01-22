@@ -1,0 +1,44 @@
+
+var canvas, ctx;
+window.onload = function init () {
+    canvas = document.querySelector('#canvasId');
+    ctx = canvas.getContext('2d');
+
+// black rectangle, default color (black)
+    ctx.fillRect(10, 10, 100, 100);
+// outlined rectangle, default color
+    ctx.strokeRect(150, 10, 100, 100);
+
+// outlined rectangle filled in red, outline blue
+    ctx.fillStyle = 'red';
+    ctx.strokeStyle = 'lightBlue';
+    ctx.lineWidth = 10;
+    ctx.fillRect(100, 150, 150, 150);
+    ctx.strokeRect(100, 150, 150, 150);
+
+// A function to automatize previous drawing
+    var angle = Math.PI / 10;
+    drawFilledRectangle(300, 150, 150, 150, 'pink', 'green', 10, angle);
+    drawFilledRectangle(300, 150, 150, 150, 'yellow', 'purple', 10, angle + 0.5);
+};
+
+function drawFilledRectangle(x, y, w, h, fillColor, strokeColor, lw, angle) {
+// GOOD PRACTICE : save if the function change the context or coordinate system
+    ctx.save();
+
+// position coordinate system
+    ctx.translate(x, y);
+    ctx.rotate(angle);
+
+// set colors, line width...
+    ctx.lineWidth = lw;
+    ctx.fillStyle = fillColor;
+    ctx.strokeStyle = strokeColor;
+
+// draw at 0, 0 as we translated the coordinate system already
+    ctx.fillRect(0, 0, w, h);
+    ctx.strokeRect(0, 0, w, h);
+
+// GOOD PRACTICE : a restore for each save!
+    ctx.restore();
+}

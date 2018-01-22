@@ -1,0 +1,8 @@
+canvas {
+    border: 2px solid chocolate;
+   }
+
+canvas:focus {
+    border: 2px solid blue;
+}
+

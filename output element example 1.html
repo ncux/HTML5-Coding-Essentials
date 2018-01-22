@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>output element example 1</title>
+</head>
+<body>
+
+<form>
+
+    <input name="a" type="number" value="50" oninput="x.value=a.valueAsNumber + b.valueAsNumber;
+    y.value = this.value">
+    <output id="y">50</output> +
+
+    <input name="b" type="number" value="50"> =
+    <output id="x" name="x" for="a b"></output>
+
+</form>
+
+</body>
+</html>

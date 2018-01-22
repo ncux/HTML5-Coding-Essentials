@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> resizing a canvas example 2</title>
+    <link href="resizing a canvas example 2.css" rel="stylesheet">
+
+    </head>
+<body onload="init();">
+<div id="divId">
+    <canvas id="canvasId" width="100" height="100"></canvas>
+</div>
+<script>
+    var canvas = document.querySelector("#canvasId");
+    var div = document.querySelector("#divId");
+    var ctx = canvas.getContext('2d');
+
+    function init() {
+        window.addEventListener('resize', resizeCanvas, false);
+        draw();
+    }
+
+    function resizeCanvas() {
+        canvas.width = div.clientWidth;
+        canvas.height = div.clientHeight;
+        draw();     // redraws after resizing
+    }
+
+    function draw() {
+        // draw two diagonal lines
+        ctx.moveTo(0, 0);
+        ctx.lineTo(canvas.width, canvas.height);
+        ctx.moveTo(0, canvas.height);
+        ctx.lineTo(canvas.width, 0);
+        ctx.strokeStyle = 'teal';
+        ctx.stroke();
+    }
+</script>
+</body>
+</html>

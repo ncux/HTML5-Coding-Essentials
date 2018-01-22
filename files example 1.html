@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>files example 1</title>
+</head>
+<body onload="readmeta();">
+
+<input type="file" id="fileId" multiple>
+<script>
+    function readmeta() {
+        var file1 = document.querySelector("#fileId").files[0];
+        document.querySelector("#li1").innerHTML = file1.name;
+        document.querySelector("#li2").innerHTML = file1.size;
+        document.querySelector("#li3").innerHTML = file1.type;
+        document.querySelector("#li4").innerHTML = file1.lastModifiedDate;
+    }
+
+</script>
+
+<ol id="olId">
+    <li id="li1"></li>
+    <li id="li2"></li>
+    <li id="li3"></li>
+    <li id="li4"></li>
+</ol>
+
+</body>
+</html>

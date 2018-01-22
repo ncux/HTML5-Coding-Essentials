@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>requestAnimationFrame example 1</title>
+</head>
+<body>
+<div id="divId"></div>
+
+<script>
+    var div = document.querySelector("#divId");
+    var leftPos = 0;
+    requestAnimationFrame(function(timestamp){
+        leftPos += 5;
+        div.style.left = leftPos;
+    })
+</script>
+
+</body>
+</html>

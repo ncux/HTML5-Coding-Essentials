@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>images - drawing example 2</title>
+    <link href="canvas example 2.css" rel="stylesheet">
+
+</head>
+<body>
+<canvas id="canvasId" width="250" height="250"></canvas>
+<img id="imageId" src="http://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" alt="html5 logo">
+<br>
+<script>
+    var canvas, ctx, image;
+    window.onload = function () {
+
+        canvas = document.querySelector("#canvasId");
+        ctx = canvas.getContext('2d');
+        image = document.querySelector("#imageId");
+        drawerOfImages();
+    };
+
+    function drawerOfImages() {
+        ctx.drawImage(image, 0, 10, 250, 250)  // with size 250*250
+    }
+
+</script>
+</body>
+</html>

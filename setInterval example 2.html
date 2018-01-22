@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>setInterval example 2</title>
+</head>
+<body>
+<div id="divId">Animated DIV</div>
+<button onclick="start()">Start animation</button>
+<button onclick="stop()">Stop animation</button>
+<script>
+    var div = document.querySelector("#divId");
+    var requestId;
+    var x = 0;
+
+    function start() {
+        requestId = setInterval(render, 10);
+    }
+
+    function render() {
+        div.style.left = x++;
+    }
+
+    function stop() {
+        if (requestId) {
+            clearInterval(requestId);
+        }
+    }
+</script>
+</body>
+</html>

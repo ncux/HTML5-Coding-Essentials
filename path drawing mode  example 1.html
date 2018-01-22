@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>path drawing mode </title>
+    <link href="canvas example 2.css" rel="stylesheet">
+</head>
+<body>
+<canvas id="canvasId" width="400" height="400"></canvas>
+
+<script>
+    var  canvas, ctx;
+    canvas = document.querySelector("#canvasId");
+    ctx = canvas.getContext('2d');
+    // Path made of three points (defines two lines)
+    ctx.moveTo(20, 20);
+    ctx.lineTo(100, 100);
+    ctx.lineTo(100, 0);
+    ctx.closePath();
+    ctx.strokeStyle = "brown";
+    ctx.stroke();
+</script>
+
+</body>
+</html>

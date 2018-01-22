@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas translation example 1</title>
+    <link href="canvas example 2.css" rel="stylesheet">
+</head>
+<body>
+<canvas id="canvasId" width="400" height="400"></canvas>
+
+<script>
+    var canvas = document.querySelector("#canvasId");
+    if (canvas.getContext)
+    {
+        var ctx = canvas.getContext('2d');
+        ctx.beginPath();
+        ctx.lineWidth = "3";
+        ctx.strokeStyle = "blue";
+        ctx.strokeRect(50, 50, 160, 160);
+        //Move the origin from (0,0) to (50,50)
+        ctx.translate(50, 50);
+        ctx.strokeStyle = "red";
+        ctx.strokeRect(50, 50, 160, 160);
+        ctx.stroke();
+    }
+</script>
+</body>
+</html>

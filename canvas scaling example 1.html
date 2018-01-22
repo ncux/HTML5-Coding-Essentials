@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas scaling example 1</title>
+    <link href="canvas example 2.css" rel="stylesheet">
+</head>
+<body>
+
+<canvas id="canvasId" width="400" height="400"></canvas>
+<script>
+var canvas = document.querySelector("#canvasId");
+
+if (canvas.getContext) {
+var ctx = canvas.getContext('2d');
+//Modify the value of x & y and see the effect
+ctx.scale(2, 2);
+
+for (i = 0; i < 500; i += 10) {
+ctx.moveTo(0, i);
+ctx.strokeStyle = "#E8D8D8";
+ctx.lineTo(canvas.width, i);
+ctx.stroke();
+}
+
+for (i = 0; i <511; i += 10) {
+ctx.moveTo(i, 0);
+ctx.strokeStyle = "#E8D8D8";
+ctx.lineTo(i,canvas.height);
+ctx.stroke();
+}
+
+ctx.fillStyle = 'blue';
+ctx.fillRect(80, 65, 100, 50);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>color input example 1</title>
+</head>
+<body>
+
+<label for="colorId">Choose a color:
+    <input type="color" id="colorId">
+</label>
+
+<script>
+    var color = document.querySelector("#colorId");
+    color.addEventListener('input', changeBackGround);
+    function changeBackGround() {
+        document.body.style.backgroundColor = color.value;
+    }
+
+</script>
+
+</body>
+</html>

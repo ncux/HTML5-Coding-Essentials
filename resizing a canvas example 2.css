@@ -1,0 +1,11 @@
+
+#divId {
+    width: 100%;
+    height: 50%;
+    margin-right: 10px;
+    border: 1px solid brown;
+}
+
+#canvasId {
+    border: 2px solid green;
+}

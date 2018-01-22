@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>events example 3</title>
+    <link href="canvas example 2.css" rel="stylesheet">
+</head>
+<body onload="init();">
+<canvas id="canvasId" tabindex="1" width="200" height="200"></canvas>
+
+<script>
+    var canvas = document.querySelector("#canvasId");
+    function init() {
+        canvas.addEventListener('mouseenter', focusNow, false);
+        canvas.addEventListener('mouseout', unfocusNow, false);
+    }
+
+    function mouseenter() {
+        canvas.focus();
+    }
+
+    function mouseout() {
+        canvas.blur();
+    }
+</script>
+
+</body>
+</html>

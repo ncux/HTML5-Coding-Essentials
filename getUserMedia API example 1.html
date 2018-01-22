@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getUserMedia API example 1</title>
+</head>
+<body>
+
+<video width=200 height=200 id="video" controls autoplay></video>
+<button onclick="startWebcam();">Start Webcam</button>
+<button onclick="stopWebcam();">Stop Webcam</button>
+
+<script>
+    var webcamStream;
+
+    function startWebcam() {
+        if (navigator.getUserMedia) {
+            navigator.getUserMedia (
+                // constraints
+                {
+                    video: true,
+                    audio: false
+                },
+
+                // successCallback
+                function(localMediaStream) {
+                    var video = document.querySelector('video');
+                    video.src = window.URL.createObjectURL(localMediaStream);
+                    // We use the first webcam by default
+                    webcamStream = localMediaStream.getTracks()[0];
+                },
+
+                // errorCallback
+                function(err) {
+                    console.log("The following error occurred: " + err);
+                }
+            );
+        } else {
+            console.log("getUserMedia not supported");
+        }
+    }
+    function stopWebcam() {
+        webcamStream.stop();
+    }
+</script>
+
+</body>
+</html>

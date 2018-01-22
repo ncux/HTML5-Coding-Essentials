@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>requestAnimationFrame example 2</title>
+</head>
+<body>
+<div id="divId"></div>
+
+<script>
+
+    var div = document.querySelector("#divId");
+    var leftPos = 0;
+    function moveDiv() {
+        leftPos += 5;
+        div.style.left = leftPos;
+        requestAnimationFrame(moveDiv)  // call requestAnimationFrame again to animate next frame
+    }
+    requestAnimationFrame(moveDiv)     // call requestAnimationFrame and pass into it animation function
+
+</script>
+
+</body>
+</html>

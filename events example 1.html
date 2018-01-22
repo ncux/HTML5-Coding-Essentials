@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>events example 1</title>
+    <link href="canvas example 2.css" rel="stylesheet">
+</head>
+<body onload="init();">
+
+<canvas id="canvasId" width="300" height="300"></canvas>
+<script>
+    function init() {
+        window.addEventListener('keydown', press, false);
+    }
+
+    function press(event) {
+        alert("the key code is: " + event.keyCode);
+        return false;
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>files example 2</title>
+</head>
+<body>
+<label for="inputId">Click to select a file:
+    <input type="file" id="inputId" onchange="readFile();">
+</label>
+<br>
+<textarea id="textId" rows=15 cols=50 ></textarea>
+
+
+<script>
+    function readFile(files) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            document.querySelector("#textId").value = e.target.result;
+        };
+        reader.readAsText(files[0]);
+    }
+
+</script>
+
+</body>
+</html>

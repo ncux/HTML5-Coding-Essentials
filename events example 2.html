@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>events example 2</title>
+    <link href="canvas example 2.css" rel="stylesheet">
+</head>
+<body onload="init();">
+
+<canvas id="canvasId" tabindex="1" width="200" height="200"></canvas>
+
+<script>
+    var canvas = document.querySelector("#canvasId");
+    var ctx = canvas.getContext('2d');
+    function init() {
+        canvas.addEventListener('keydown', press, false);
+        canvas.focus();
+    }
+
+    function press(event) {
+        alert("you pressed: " + event.keyCode);
+    }
+</script>
+
+</body>
+</html>

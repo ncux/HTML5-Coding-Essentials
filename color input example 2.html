@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>color input example 2</title>
+</head>
+<body>
+
+<label for="colorId">Choose a color:
+    <input type="color" id="colorId" list="options">
+    <datalist id="options">
+        <option>#FF0000</option>
+        <option>#00FF00</option>
+        <option>#0000FF</option>
+    </datalist>
+</label>
+
+<script>
+    var color = document.querySelector("#colorId");
+    color.addEventListener('input', changeBackGround);
+    function changeBackGround() {
+        document.body.style.backgroundColor = color.value;
+    }
+
+</script>
+
+</body>
+</html>

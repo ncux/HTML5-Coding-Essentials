@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>shadows example 2</title>
+    <link href="canvas example 2.css" rel="stylesheet">
+</head>
+<body onload="init();">
+<canvas id="canvasId" width="300" height="300"></canvas>
+<script>
+    var canvas, ctx;
+    function init() {
+        canvas = document.querySelector("#canvasId");
+        ctx = canvas.getContext('2d');
+        ctx.shadowColor = "Grey";
+        ctx.shadowBlur = 20;
+        ctx.shadowOffsetX = 15;
+        ctx.shadowOffsetY = 15;  // all drawings that will occur will cast shadows
+
+        ctx.fillStyle = "#22FFDD";      // for top green filled rectangle
+        ctx.fillRect(20, 20, 200, 100);
+
+        ctx.strokeStyle = "purple";     // for bottom stroked rectangle
+        ctx.lineWidth=10;
+        ctx.strokeRect(20, 150, 200, 100);
+    }
+</script>
+
+</body>
+</html>

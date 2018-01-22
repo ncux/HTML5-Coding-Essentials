@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas rotation example 1</title>
+    <link href="canvas example 2.css" rel="stylesheet">
+</head>
+<body>
+
+<canvas id="canvasId" width="400" height="400"></canvas>
+
+<script>
+    var canvas = document.querySelector("#canvasId");
+    if (canvas.getContext)
+    {
+        var ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = "green";
+        ctx.fillRect(8,8, 100, 100);        // first rectangle
+
+        ctx.rotate( (Math.PI / 180) * 30);  //rotate 30    degrees.
+
+        ctx.fillStyle = "orange";           // second rectangle
+        ctx.fillRect(8,8, 100, 100);
+    }
+</script>
+
+</body>
+</html>

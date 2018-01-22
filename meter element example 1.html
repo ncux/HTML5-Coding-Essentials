@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>meter element example 1</title>
+</head>
+<body>
+Charge: <meter id="meterId" value="45" min="0" low="20" high="80" max="100" optimum="75"></meter>
+<input type="range" min="0" max="100" value="45" id="inputId" oninput="effect('meterId', 'inputId')">
+<output id="outputId" for="inputId"></output> <br>
+
+<script>
+    // something wrong!
+    function effect() {
+        var slideVal = document.querySelector("#inputId");
+        document.querySelector("#outputId").value = slideVal;
+        document.querySelector("#outputId").innerHTML = slideVal;
+
+    }
+</script>
+
+
+</body>
+</html>

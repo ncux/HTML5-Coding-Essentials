@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>video CSS example 2</title>
+    <link href="video CSS example 2.css" rel="stylesheet">
+    <script>
+
+        var video = document.querySelector("#videoId");
+
+        function init() {                                    // function called when the page is loaded
+
+            video.width = window.innerWidth;                // For initial value
+            video.height = window.innerHeight;
+
+            window.onresize = function() {                  // For dealing with window resize
+                video.width = window.innerWidth;
+                video.height = window.innerHeight;
+            };
+        }
+
+    </script>
+</head>
+<body onload="init();">
+
+<video src=http://mainline.i3s.unice.fr/mooc/samuraiPizzacat.mp4
+       id="videoId" type=video/mp4  autoplay>
+   Video can't be played.
+</video>
+
+</body>
+</html>

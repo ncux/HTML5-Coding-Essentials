@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>images - drawing example 1</title>
+    <link href="canvas example 2.css" rel="stylesheet">
+</head>
+<body>
+
+<script>
+    window.onload = function () {
+// Necessity to run this code after the page has been loaded.
+        var canvas = document.querySelector("#canvasId");
+        var ctx = canvas.getContext("2d");
+        var image = new Image();
+        image.onload = function () {
+// Draw the image only after it has been loaded
+            ctx.drawImage(image, 0, 0);
+        };
+        image.src = "http://www.w3.org/html/logo/downloads/HTML5_Logo_512.png";
+    };
+</script>
+
+<canvas id="canvasId" width="512" height="512"></canvas>
+
+</body>
+</html>

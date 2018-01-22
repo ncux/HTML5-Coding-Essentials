@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>shadows example 3</title>
+    <link href="canvas example 2.css" rel="stylesheet">
+</head>
+<body onload="init();">
+<canvas id="canvasId" width="200" height="200"></canvas>
+<script>
+    var canvas, ctx;
+    canvas = document.querySelector("#canvasId");
+    ctx = canvas.getContext('2d');
+    ctx.arc(100, 75, 50, 0, 2*Math.PI, false);
+    ctx.save();
+    ctx.fillStyle = "lightBlue";
+    ctx.shadowColor = "Grey";
+    ctx.shadowBlur = 20;
+    ctx.shadowOffsetX = 15;
+    ctx.shadowOffsetY = 15;
+    ctx.fill();
+    ctx.restore();
+    ctx.lineWidth = 4;
+    ctx.strokeStyle = "teal";
+    ctx.stroke();
+</script>
+
+</body>
+</html>

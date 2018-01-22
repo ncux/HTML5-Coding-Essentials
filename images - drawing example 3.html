@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>images - drawing example 3</title>
+    <link href="canvas example 2.css" rel="stylesheet">
+</head>
+<body onload="init();">
+<video id="videoId" src="https://mainline.i3s.unice.fr/mooc/BigBuckBunny_640x360.mp4" autoplay loop></video>
+<canvas id="canvasId" width="620" height="360"></canvas>
+
+<script>
+    var canvas, video, ctx;
+    function init() {
+        canvas = document.querySelector("#canvasId");
+        video = document.querySelector("#videoId");
+        ctx = canvas.getContext('2d');
+        setInterval("processFrame()", 25);         // call processFrame every 25ms
+    }
+
+    function processFrame() {
+        ctx.drawImage(video, 0, 0, 320, 180);
+        ctx.drawImage(video, 0, 180, 320, 180);
+        ctx.drawImage(video, 320, 180, 320, 180);
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>progress element example 1</title>
+</head>
+<body>
+Download progress: <progress id="progressId" max="1000" value="100"></progress>
+
+<script>
+    var i = 0;
+    setInterval(function () {
+        i = (i+1) %1000;
+        document.querySelector("#progressId").value = i;
+    }, 1);
+
+</script>
+
+</body>
+</html>

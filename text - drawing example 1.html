@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>text - drawing example 1</title>
+    <link href="canvas example 2.css" rel="stylesheet">
+</head>
+<body>
+
+<canvas Id="canvasId" width="350" height="150"></canvas>
+<script>
+
+    var canvas = document.querySelector("#canvasId");
+    var ctx = canvas.getContext('2d');
+    ctx.font = "50px Calibri";
+    ctx.lineWidth = 4;
+    ctx.strokeStyle = 'brown';
+    ctx.fillStyle = 'teal';
+
+    ctx.strokeText("Honda Accord", 10, 100);
+    ctx.fillText("Honda Accord", 10, 100);
+
+</script>
+
+</body>
+</html>
